@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "BlueSphere Logistics Risk API",
+    "description": "API collection for testing BlueSphere weather-based logistics risk platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/logistics/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "logistics", "health"]
+        },
+        "description": "Check if the API is running"
+      }
+    },
+    {
+      "name": "Get All High-Risk Zones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/logistics/risk-zones",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "logistics", "risk-zones"]
+        },
+        "description": "Get all cities with high delivery risk (Power BI endpoint)"
+      }
+    },
+    {
+      "name": "Get Risk for Mumbai",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/logistics/risk-zones/1275339",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "logistics", "risk-zones", "1275339"]
+        },
+        "description": "Get risk assessment for Mumbai (city ID: 1275339)"
+      }
+    },
+    {
+      "name": "Get Risk for Delhi",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/logistics/risk-zones/1273294",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "logistics", "risk-zones", "1273294"]
+        },
+        "description": "Get risk assessment for Delhi (city ID: 1273294)"
+      }
+    },
+    {
+      "name": "Trigger Manual Ingestion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/logistics/ingest",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "logistics", "ingest"]
+        },
+        "description": "Manually trigger weather data ingestion (requires API key)"
+      }
+    }
+  ]
+}
